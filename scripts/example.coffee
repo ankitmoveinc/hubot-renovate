@@ -107,3 +107,6 @@ module.exports = (robot) ->
 
   robot.respond /Goodnight/i, (res) ->
     res.reply 'Goodnight!!'
+
+  robot.respond /are you sleepy/i, (res) ->
+    res.reply 'Not really.. you humans sleep.. i am AUTOBOT!!'
