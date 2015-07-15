@@ -13,5 +13,6 @@
   "hubot-sentimental",
   "hubot-darts",
   "hubot-thesimpsons",
-  "hubot-victory"
+  "hubot-victory",
+  "hubot-standup-alarm"
 ]
