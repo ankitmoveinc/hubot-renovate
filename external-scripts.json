@@ -15,5 +15,6 @@
   "hubot-thesimpsons",
   "hubot-victory",
   "hubot-standup-alarm",
-  "hubot-thank-you"
+  "hubot-thank-you",
+  "hubot-mute"
 ]
