@@ -6,5 +6,6 @@
   "remember.coffee",
   "aww.coffee",
   "ruby_rules.coffee",
-  "news.coffee"
+  "news.coffee",
+  "weather.coffee"
 ]
