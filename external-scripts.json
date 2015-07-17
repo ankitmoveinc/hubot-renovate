@@ -18,5 +18,6 @@
   "hubot-thank-you",
   "hubot-mute",
   "hubot-what-the-fox",
-  "hubot-reaction"
+  "hubot-reaction",
+  "hubot-outofcontext"
 ]
