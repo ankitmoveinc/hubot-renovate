@@ -8,5 +8,6 @@
   "ruby_rules.coffee",
   "news.coffee",
   "weather.coffee",
-  "beerme.coffee"
+  "beerme.coffee",
+  "grumpycat.coffee"
 ]
