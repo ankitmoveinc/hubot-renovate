@@ -44,7 +44,7 @@ module.exports = (robot) ->
 
   robot.respond /what is the answer to the ultimate question of life/, (res) ->
     unless answer?
-      res.send "Missing HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING in environment: please set and try again"
+      res.send "The number 42 is, in The Hitchhiker's Guide to the Galaxy by Douglas Adams, 'The Answer to the Ultimate Question of Life, the Universe, and Everything', calculated by an enormous supercomputer over a period of 7.5 million years. Unfortunately, no one knows what the question is. Thus, to calculate the Ultimate Question, a special computer the size of a small planet was built from organic components and named 'Earth'. This appeared first in the radio play and later in the novelization of The Hitchhiker's Guide to the Galaxy. The fact that Adams named the episodes of the radio play 'fits', the same archaic title for a chapter or section used by Lewis Carroll in 'The Hunting of the Snark', suggests that Adams was influenced by Carroll's fascination with and frequent use of the number. The fourth book in the series, the novel So Long, and Thanks for All the Fish, contains 42 chapters. According to the novel Mostly Harmless, 42 is the street address of Stavromula Beta. In 1994 Adams created the 42 Puzzle, a game based on the number 42. The phrase 'the answer to life, the universe and everything is' has exactly 42 characters, including the comma after 'life'."
       return
     res.send "#{answer}, but what is the question?"
 
