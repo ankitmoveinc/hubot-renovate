@@ -110,6 +110,37 @@ module.exports = (robot) ->
 
   robot.respond /are you sleepy/i, (res) ->
     res.reply 'Not really.. you humans sleep.. i am AUTOBOT!!'
-    
+
   robot.respond /wake me up when september ends/i, (res) ->
     res.reply 'Deployyyyyyy....... to production :D'
+
+  robot.respond /who checked out (.*)\??/i, (res) ->
+    feature = res.match[1]
+    checkouts = robot.brain.get("features") || {}
+    name = checkouts[feature] || 'nobody'
+
+    res.send "#{name} checked out #{feature}"
+
+  robot.respond /show checkouts/i, (res) ->
+    checkouts = robot.brain.get('features')
+    for own feature, name of checkouts
+      res.send("#{name} checked out #{feature}")
+    res.send("Any feature not listed is free for the taking!")
+
+  robot.respond /check\s?out (.*)/i, (res) ->
+    user = res.message.user.name
+    feature = res.match[1]
+    checkouts = robot.brain.get("features") || {}
+    checked_out = checkouts[feature] || 'nobody'
+
+    if 'nobody' == checked_out
+      checkouts[feature] = user
+      robot.brain.set("features", checkouts)
+      res.send "#{user}, #{feature} is all yours!"
+    else
+      if checked_out == user
+        checkouts[feature] = 'nobody'
+        robot.brain.set("features", checkouts)
+        res.send "#{feature} is now free for the taking!"
+      else
+        res.send "Sorry, #{checked_out} already checked out #{feature}."
