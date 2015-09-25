@@ -10,7 +10,6 @@
   "hubot-rules",
   "hubot-shipit",
   "hubot-devops-reactions",
-  "hubot-sentimental",
   "hubot-darts",
   "hubot-thesimpsons",
   "hubot-victory",
@@ -19,6 +18,5 @@
   "hubot-mute",
   "hubot-what-the-fox",
   "hubot-reaction",
-  "hubot-outofcontext",
   "hubot-business-cat"
 ]
