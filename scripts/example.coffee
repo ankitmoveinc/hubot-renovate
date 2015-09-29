@@ -127,9 +127,9 @@ module.exports = (robot) ->
       res.send("#{name} checked out #{feature}")
     res.send("Any feature not listed is free for the taking!")
 
-  robot.respond /nuke feature (.*)/i, (res) ->
+  robot.respond /nuke (feature )?(.*)/i, (res) ->
     user = res.message.user.name
-    feature = res.match[1]
+    feature = res.match[2]
     checkouts = robot.brain.get("features") || {}
     checked_out = checkouts[feature] || 'nobody'
 
@@ -142,7 +142,21 @@ module.exports = (robot) ->
       robot.brain.set("features", checkouts)
       res.send "Nuked #{feature} from orbit :nuke:"
     else
-      res.send "#{user} has checked out that feature, make them give it up first!"
+      res.send "#{user} has checked out that feature, make them give it up first (or steal it)!"
+
+  robot.respond /steal (.*)/i, (res) ->
+    user = res.message.user.name
+    feature = res.match[1]
+    checkouts = robot.brain.get("features") || {}
+    checked_out = checkouts[feature] || 'nobody'
+
+    if 'nobody' == checked_out
+      res.send "#{user} tried to steal something that doesn't exist :jimminy_cricket:"
+      return
+
+    checkouts[feature] = user
+    robot.brain.set("features", checkouts)
+    res.send "Hey, #{checked_out}, #{user} stole #{feature} from you :feelsgood:"
 
   robot.respond /check\s?out (.*)/i, (res) ->
     user = res.message.user.name
