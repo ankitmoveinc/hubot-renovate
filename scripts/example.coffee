@@ -119,7 +119,7 @@ module.exports = (robot) ->
     result = ':realtor: CORE WEB FEATURE BOXES :realtor: \n\n' ;
     for own feature, name of checkouts
       result = result.concat("> *#{name}* checked out #{feature}\n");
-    result = result.concat("\n\n> Any feature not listed is free for the taking! :pray:")
+    result = result.concat("\n\n> Any *feature* not listed is free for the taking! :mk-subzero:")
     res.send result 
 
   robot.respond /who checked out (.*)\??/i, (res) ->
@@ -131,9 +131,11 @@ module.exports = (robot) ->
 
   robot.respond /show checkouts/i, (res) ->
     checkouts = robot.brain.get('features')
+    result = ':realtor: CORE WEB FEATURE BOXES :realtor: \n\n' ;
     for own feature, name of checkouts
-      res.send("#{name} checked out #{feature}")
-    res.send("Any feature not listed is free for the taking!")
+      result = result.concat("> *#{name}* checked out #{feature}\n");
+    result = result.concat("\n\n> Any *feature* not listed is free for the taking! :mk-subzero:")
+    res.send result 
 
   robot.respond /nuke (feature )?(.*)/i, (res) ->
     user = res.message.user.name
