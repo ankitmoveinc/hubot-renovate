@@ -116,9 +116,9 @@ module.exports = (robot) ->
 
   robot.respond /ankit/i, (res) ->
     res.send " \n
-    owners: Ankit\n
-    owners: Ankit\n
-    "
+    > owners: Ankit\n
+    > owners: Ankit\n
+    > owners: Ankit\n"
 
   robot.respond /who checked out (.*)\??/i, (res) ->
     feature = res.match[1]
