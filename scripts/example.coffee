@@ -115,10 +115,10 @@ module.exports = (robot) ->
     res.reply 'Deployyyyyyy....... to production :D'
 
   robot.respond /ankit/i, (res) ->
-    a  = { feature1: 'ankit', feature2: 'Sonam', feature3: 'Ashish', feature4: 'Gourav' };
+    checkouts = robot.brain.get('features')
     result = '' ;
-    for own feature, name of a
-      result = tt.concat("> #{name} checked out #{feature}\n");
+    for own feature, name of checkouts
+      result = result.concat("> *#{name}* checked out #{feature}\n");
     res.send result 
 
   robot.respond /who checked out (.*)\??/i, (res) ->
@@ -130,7 +130,6 @@ module.exports = (robot) ->
 
   robot.respond /show checkouts/i, (res) ->
     checkouts = robot.brain.get('features')
-    console.log(checkouts);
     for own feature, name of checkouts
       res.send("#{name} checked out #{feature}")
     res.send("Any feature not listed is free for the taking!")
