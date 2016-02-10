@@ -115,10 +115,7 @@ module.exports = (robot) ->
     res.reply 'Deployyyyyyy....... to production :D'
 
   robot.respond /ankit/i, (res) ->
-    res.send " \n
-    > owners: Ankit\n
-    > owners: Ankit\n
-    > owners: Ankit\n"
+    res.send "> owners: Ankit\n> owners: Ankit\n> owners: Ankit\n"
 
   robot.respond /who checked out (.*)\??/i, (res) ->
     feature = res.match[1]
