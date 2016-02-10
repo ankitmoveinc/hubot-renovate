@@ -115,7 +115,12 @@ module.exports = (robot) ->
     res.reply 'Deployyyyyyy....... to production :D'
 
   robot.respond /ankit/i, (res) ->
-    res.send "> owners: Ankit\n> owners: Ankit\n> owners: Ankit\n"
+    a  = { feature1: 'ankit', feature2: 'Sonam', feature3: 'Ashish', feature4: 'Gourav' };
+    tt = '' ;
+    for own feature, name of a
+      result = tt.concat("> #{name} checked out #{feature}\n")
+      console.log(result);
+    res.send result 
 
   robot.respond /who checked out (.*)\??/i, (res) ->
     feature = res.match[1]
