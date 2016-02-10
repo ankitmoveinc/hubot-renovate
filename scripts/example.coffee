@@ -114,6 +114,12 @@ module.exports = (robot) ->
   robot.respond /wake me up when september ends/i, (res) ->
     res.reply 'Deployyyyyyy....... to production :D'
 
+  robot.respond /ankit/i, (res) ->
+    res.send " \n
+    owners: Ankit\n
+    owners: Ankit\n
+    "
+
   robot.respond /who checked out (.*)\??/i, (res) ->
     feature = res.match[1]
     checkouts = robot.brain.get("features") || {}
@@ -123,6 +129,7 @@ module.exports = (robot) ->
 
   robot.respond /show checkouts/i, (res) ->
     checkouts = robot.brain.get('features')
+    console.log(checkouts);
     for own feature, name of checkouts
       res.send("#{name} checked out #{feature}")
     res.send("Any feature not listed is free for the taking!")
