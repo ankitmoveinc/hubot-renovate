@@ -119,6 +119,7 @@ module.exports = (robot) ->
     result = ':realtor: CORE WEB FEATURE BOXES :realtor: \n\n' ;
     for own feature, name of checkouts
       result = result.concat("> *#{name}* checked out #{feature}\n");
+    result = result.concat("\n\n> Any feature not listed is free for the taking! :pray:")
     res.send result 
 
   robot.respond /who checked out (.*)\??/i, (res) ->
