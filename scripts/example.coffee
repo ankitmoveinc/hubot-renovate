@@ -116,7 +116,7 @@ module.exports = (robot) ->
 
   robot.respond /ankit/i, (res) ->
     checkouts = robot.brain.get('features')
-    result = '' ;
+    result = ':realtor: CORE WEB FEATURE BOXES :realtor: \n\n' ;
     for own feature, name of checkouts
       result = result.concat("> *#{name}* checked out #{feature}\n");
     res.send result 
