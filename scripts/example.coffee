@@ -116,10 +116,9 @@ module.exports = (robot) ->
 
   robot.respond /ankit/i, (res) ->
     a  = { feature1: 'ankit', feature2: 'Sonam', feature3: 'Ashish', feature4: 'Gourav' };
-    tt = '' ;
+    result = '' ;
     for own feature, name of a
-      result = tt.concat("> #{name} checked out #{feature}\n")
-      console.log(result);
+      result = tt.concat("> #{name} checked out #{feature}\n");
     res.send result 
 
   robot.respond /who checked out (.*)\??/i, (res) ->
